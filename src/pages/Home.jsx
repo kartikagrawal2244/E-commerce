@@ -104,8 +104,6 @@ function Home() {
                 </div>
 
                 <div className='my-auto'>
-                    {/* <h5 className='text-xl font-medium mb-4 text-[#B08EAD] uppercase'>Started from $10</h5> */}
-
                     <h5 className='text-[40px] leading-normal font-medium text-[#4B3049] hover:text-[#795376] inline-block mb-4 uppercase transition ease-in-out duration-[0.5s]'>
                         Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
                     </h5>
@@ -117,7 +115,7 @@ function Home() {
             </div>
 
             <div className='bg-[#F4EDF2]'>
-                <div className='max-w-6xl mx-auto pt-[200px] pb-[130px]'>
+                <div className='max-w-6xl mx-auto py-[100px]'>
                     <h2 className='text-[#4B3049] text-4xl font-bold text-center'>Trending Items</h2>
 
                     <div className='grid lg:grid-cols-3 md:grid-cols-2 lg:px-0 px-7 gap-20 mt-16'>
