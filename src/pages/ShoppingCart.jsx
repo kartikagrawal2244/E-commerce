@@ -67,8 +67,8 @@ function ShoppingCart() {
                         </tbody>
                     </table>
 
-                    <div className='flex justify-between py-[60px] border-[#dddddd] border-b items-center'>
-                        <div>
+                    <div className='md:flex justify-between py-[60px] border-[#dddddd] border-b items-center text-center'>
+                        <div className='md:mb-0 mb-10'>
                             <Link to="/productlist" className='py-4 px-12 bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] text-white text-base font-medium transition-all hover:bg-transparent hover:text-[#B08EAD] ease-in-out duration-[0.5s] uppercase'>Continue shopping</Link>
                         </div>
 

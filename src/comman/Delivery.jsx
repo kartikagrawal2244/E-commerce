@@ -3,7 +3,7 @@ import ShoppingCart from '../comman/ShoppingCart'
 function Delivery() {
     return (
         <div className='max-w-6xl mx-auto py-[200px]'>
-            <div className='grid lg:grid-cols-2 lg:px-0 px-7'>
+            <div className='grid lg:grid-cols-2 xl:px-0 px-7 gap-20'>
                 <div>
                     <h1 className='text-[40px] leading-normal font-medium text-[#4B3049]'>Credibly innovate granular internal or organic sources whereas standards.</h1>
                 </div>
@@ -13,7 +13,7 @@ function Delivery() {
                 </div>
             </div>
 
-            <div className='grid lg:grid-cols-4 md:grid-cols-2 lg:px-0 px-7 mt-28 gap-10'>
+            <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 xl:px-0 px-7 mt-28 gap-10'>
                 <div>
                     <ShoppingCart
                         image="/assets/images/feature_icon_1.svg"

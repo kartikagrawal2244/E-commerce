@@ -22,8 +22,8 @@ function Productlist() {
 
             {/* Filter Section */}
             <div className='max-w-6xl mx-auto py-[120px]'>
-                <div className='grid grid-cols-3 gap-10'>
-                    <div>
+                <div className='grid xl:grid-cols-3 gap-10 px-6 xl:px-0'>
+                    <div className='xl:block md:flex justify-between'>
                         {/* Search Input */}
                         <div className='mb-6'>
                             <input
@@ -76,11 +76,11 @@ function Productlist() {
                     </div>
 
                     {/* Product Display Section */}
-                    <div className='col-span-2'>
-                        <div className='grid grid-cols-2 gap-12'>
+                    <div className='xl:col-span-2'>
+                        <div className='grid md:grid-cols-2 place-items-center gap-12'>
                             {filterproducts.map((item) => (
                                 <div key={item.id}>
-                                    <img src={item.image} alt="product_image" className='max-w-48' />
+                                    <img src={item.image} alt="product_image" className='max-w-48 mx-auto' />
 
                                     <Link to={`/productdetail/${item.id}`}
                                         className='text-2xl mt-[22px] font-medium text-[#4B3049] hover:text-[#795376] inline-block mb-2 uppercase transition ease-in-out duration-[0.5s]'>

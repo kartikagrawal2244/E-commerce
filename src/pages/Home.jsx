@@ -8,54 +8,6 @@ function Home() {
 
     const [productlist, setProductlist] = useState([]);
 
-    // const productlist = [
-    //     {
-    //         image: "/assets/images/tranding_item_2.png.webp",
-    //         heading: "Foam filling cotton slow rebound pillows",
-    //         text: "From $5"
-    //     },
-    //     {
-    //         image: "/assets/images/tranding_item_1.png.webp",
-    //         heading: "Cervical pillow for airplane car office nap pillow",
-    //         text: "From $5"
-    //     },
-    //     {
-    //         image: "/assets/images/tranding_item_3.png.webp",
-    //         heading: "Cervical pillow for airplane car office nap pillow",
-    //         text: "From $5"
-    //     },
-    //     {
-    //         image: "/assets/images/tranding_item_2.png.webp",
-    //         heading: "Foam filling cotton slow rebound pillows",
-    //         text: "From $5"
-    //     },
-    //     {
-    //         image: "/assets/images/tranding_item_1.png.webp",
-    //         heading: "Cervical pillow for airplane car office nap pillow",
-    //         text: "From $5"
-    //     },
-    //     {
-    //         image: "/assets/images/tranding_item_3.png.webp",
-    //         heading: "Cervical pillow for airplane car office nap pillow",
-    //         text: "From $5"
-    //     },
-    //     {
-    //         image: "/assets/images/tranding_item_2.png.webp",
-    //         heading: "Foam filling cotton slow rebound pillows",
-    //         text: "From $5"
-    //     },
-    //     {
-    //         image: "/assets/images/tranding_item_1.png.webp",
-    //         heading: "Cervical pillow for airplane car office nap pillow",
-    //         text: "From $5"
-    //     },
-    //     {
-    //         image: "/assets/images/tranding_item_3.png.webp",
-    //         heading: "Cervical pillow for airplane car office nap pillow",
-    //         text: "From $5"
-    //     }
-    // ]
-
     function getapi() {
         fetch(`https://fakestoreapi.com/products?limit=6`)
             .then((response) => {
@@ -93,7 +45,7 @@ function Home() {
             </div>
 
             <div className='max-w-6xl mx-auto py-16 lg:px-0 px-7 grid lg:grid-cols-2 gap-20'>
-                <div className='my-auto md:order-1 order-2'>
+                <div className='my-auto lg:order-1 order-2'>
                     {/* <h5 className='text-xl font-medium mb-4 text-[#B08EAD] uppercase'>Started from $10</h5> */}
 
                     <h5 className='text-[40px] leading-normal font-medium text-[#4B3049] hover:text-[#795376] inline-block mb-4 uppercase transition ease-in-out duration-[0.5s]'>
@@ -105,7 +57,7 @@ function Home() {
                     <Link to="/productlist" className='py-4 px-12 hover:bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] hover:text-white text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]'>shop now</Link>
                 </div>
 
-                <div className='md:order-2 order-1'>
+                <div className='lg:order-2 order-1'>
                     <img src="/assets/images/71YAIFU48IL._AC_UL640_QL65_ML3.jpg" alt="heroimage" className='w-3/4 mx-auto my-auto shadow-3xl' />
                 </div>
             </div>
@@ -129,7 +81,7 @@ function Home() {
             </div>
 
             <div className='max-w-6xl mx-auto py-16 grid lg:grid-cols-2 lg:px-0 px-7 gap-20'>
-                <div className='my-auto md:order-1 order-2'>
+                <div className='my-auto lg:order-1 order-2'>
                     {/* <h5 className='text-xl font-medium mb-4 text-[#B08EAD] uppercase'>Started from $10</h5> */}
 
                     <h5 className='text-[40px] leading-normal font-medium text-[#4B3049] hover:text-[#795376] inline-block mb-4 uppercase transition ease-in-out duration-[0.5s]'>
@@ -141,7 +93,7 @@ function Home() {
                     <Link to="/productlist" className='py-4 px-12 hover:bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] hover:text-white text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]'>shop now</Link>
                 </div>
 
-                <div className='md:order-2 order-1'>
+                <div className='lg:order-2 order-1'>
                     <img src="/assets/images/71HblAHs5xL._AC_UY879.jpg" alt="heroimage" className='w-3/4 mx-auto my-auto shadow-3xl' />
                 </div>
             </div>
