@@ -2,7 +2,7 @@ import ShoppingCart from '../comman/ShoppingCart'
 
 function Delivery() {
     return (
-        <div className='max-w-6xl mx-auto py-[200px]'>
+        <div className='max-w-6xl mx-auto py-[100px]'>
             <div className='grid lg:grid-cols-2 xl:px-0 px-7 gap-20'>
                 <div>
                     <h1 className='text-[40px] leading-normal font-medium text-[#4B3049]'>Credibly innovate granular internal or organic sources whereas standards.</h1>
