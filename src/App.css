@@ -1,0 +1,7 @@
+.carousel .slide img{
+    width: 80px !important;
+}
+
+.carousel .slide .detail-page img{
+    width: 40% !important;
+}
