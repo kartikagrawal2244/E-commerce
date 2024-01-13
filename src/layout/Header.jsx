@@ -52,7 +52,7 @@ export default function Header() {
         <header className="bg-white sticky z-10 top-0">
 
             <nav className="mx-auto flex max-w-6xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-                <div className="flex lg:flex-1">
+                <div className="flex lg:flex-1 lg:order-none order-2">
                     <Link to="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
                         <img className="h-8 w-auto" src="/assets/images/logo.png.webp" alt="" />
@@ -186,7 +186,7 @@ export default function Header() {
                     </Link>
                 </Popover.Group>
 
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                <div className="flex order-3 lg:flex-1 justify-end">
                     <Link to="/shoppingcart" className="relative text-sm font-semibold me-4 leading-6 text-gray-900">
                         <FaCartShopping fontSize={25} />
                         <sub className='absolute -top-1 -right-1 bg-[#B08EAD] text-white w-4 h-4 rounded-full flex items-center justify-center'>{totalquantity}</sub>
@@ -249,14 +249,13 @@ export default function Header() {
 
                                             <Disclosure.Panel className="mt-2 space-y-2">
                                                 {products.map((item) => (
-                                                    <Disclosure.Button
+                                                    <Link
                                                         key={item.name}
-                                                        as="Link"
                                                         to={item.to}
                                                         className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                                     >
                                                         {item.name}
-                                                    </Disclosure.Button>
+                                                    </Link>
                                                 ))}
                                             </Disclosure.Panel>
                                         </>
@@ -276,14 +275,13 @@ export default function Header() {
 
                                             <Disclosure.Panel className="mt-2 space-y-2">
                                                 {pages.map((item) => (
-                                                    <Disclosure.Button
+                                                    <Link
                                                         key={item.name}
-                                                        as="a"
-                                                        href={item.href}
+                                                        to={item.to}
                                                         className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                                     >
                                                         {item.name}
-                                                    </Disclosure.Button>
+                                                    </Link>
                                                 ))}
                                             </Disclosure.Panel>
                                         </>
@@ -303,14 +301,13 @@ export default function Header() {
 
                                             <Disclosure.Panel className="mt-2 space-y-2">
                                                 {blog.map((item) => (
-                                                    <Disclosure.Button
+                                                    <Link
                                                         key={item.name}
-                                                        as="a"
-                                                        href={item.href}
+                                                        to={item.to}
                                                         className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                                     >
                                                         {item.name}
-                                                    </Disclosure.Button>
+                                                    </Link>
                                                 ))}
                                             </Disclosure.Panel>
                                         </>
@@ -325,25 +322,10 @@ export default function Header() {
                                     Contact
                                 </Link>
                             </div>
-                            
-                            {/* 
-                            <div className="py-6">
-                                <Link to="/shoppingcart"
-                                    className="relative -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >
-                                    <FaCartShopping fontSize={25} />
-                                    <sub className='absolute top-1 left-7 bg-[#B08EAD] text-white w-4 h-4 rounded-full flex items-center justify-center'>{totalquantity}</sub>
-                                </Link>
-                            </div> */}
                         </div>
                     </div>
                 </Dialog.Panel>
             </Dialog>
-
-            {/* 
-            <div className='bg-[#B08EAD]'>
-                <input type="search" name="" id="" placeholder='Search Here' className='w-full focus:outline-none' />
-            </div> */}
         </header>
     )
 }

@@ -48,7 +48,7 @@ export const CartProvider = ({ children }) => {
         dispatch({ type: "TOTAL_ITEM" })
         dispatch({ type: "SUB_TOTAL_PRICE" })
         localStorage.setItem('cart', JSON.stringify(state.cart));
-    }, [state.cart ])
+    }, [state.cart])
 
     return (
         <CartContext.Provider value={{ ...state, addtocart, cleardata, increase, decrease , handledelete }}>
