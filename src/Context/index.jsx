@@ -29,10 +29,10 @@ const ProductProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        getapi();   
+        getapi();
     }, [])
 
-    return <Product.Provider value={{ ...state  }}>{children}</Product.Provider>
+    return <Product.Provider value={{ ...state }}>{children}</Product.Provider>
 }
 
 const useProduct = () => {

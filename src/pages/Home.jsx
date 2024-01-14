@@ -8,7 +8,7 @@ function Home() {
 
     const [productlist, setProductlist] = useState([]);
 
-    function getapi() {
+    function homeapi() {
         fetch(`https://fakestoreapi.com/products?limit=6`)
             .then((response) => {
                 if (!response.ok) {
@@ -25,7 +25,7 @@ function Home() {
     }
 
     useEffect(() => {
-        getapi()
+        homeapi()
     }, [])
 
 

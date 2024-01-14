@@ -80,7 +80,7 @@ function ProductDetail() {
                         <button type='button' className='py-3 px-5 border border-[#B08EAD] text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]' onClick={() => setDigit(digit + 1)} >+</button>
                     </div>
 
-                    <p className='text-[#795376] text-base font-normal ms-6'> &#8377; {currentProduct.price}</p>
+                    <p className='text-[#795376] text-base font-normal ms-6'> &#36;{currentProduct.price}</p>
                 </div>
 
                 <Link to="/shoppingcart" onClick={() => addtocart(currentProduct , digit)} className='py-4 px-12 hover:bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] hover:text-white text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]'>add to cart</Link>

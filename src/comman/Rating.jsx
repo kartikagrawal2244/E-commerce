@@ -16,7 +16,7 @@ function Rating({ Rate, Count }) {
 
 
     return (
-        <p className='text-xl font-medium text-[#795376] flex items-center'>{Rate}&nbsp;{rating}&nbsp;({Count} Review)</p>
+        <p className='text-xl font-medium text-[#795376] flex items-center'>{Rate}&nbsp;{rating}&nbsp;({Count})</p>
     )
 }
 

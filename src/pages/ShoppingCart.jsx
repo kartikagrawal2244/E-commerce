@@ -1,6 +1,13 @@
 import React from 'react'
 import { useCart } from '../Context/CartContext';
 import { Link } from 'react-router-dom';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+
 
 function ShoppingCart() {
     const { cart, cleardata, increase, decrease, shipping, totalamount, handledelete } = useCart();
@@ -13,39 +20,59 @@ function ShoppingCart() {
 
             {cart.length > 0 ?
                 <div className='py-[100px] max-w-6xl m-auto px-8' >
-                    <table className="w-full">
-                        <thead>
-                            <tr>
-                                <th className='text-start py-4 text-sm text-[#795376] font-medium'>Product</th>
-                                <th className='text-start py-4 text-sm text-[#795376] font-medium'>Name</th>
-                                <th className='text-start py-4 text-sm text-[#795376] font-medium'>Price</th>
-                                <th className='text-start py-4 text-sm text-[#795376] font-medium'>Quantity</th>
-                                <th className='text-start py-4 text-sm text-[#795376] font-medium'>Remove item</th>
-                                <th className='text-start py-4 text-sm text-[#795376] font-medium'>Total</th>
-                            </tr>
-                        </thead>
+                    <TableContainer>
+                        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell className='text-sm text-[#795376] font-medium'>
+                                        <div className='py-4 text-sm text-[#795376] font-semibold'>Product</div>
+                                    </TableCell>
 
-                        <tbody>
-                            {cart.map((item) => {
-                                return (
-                                    <tr key={item.id} className="border-[#dddddd] border-y">
-                                        <td>
-                                            <div className='flex items-center'>
-                                                <div className='max-w-[150px] me-10 border border-[#eeeeee] rounded-[3px] my-6'>
-                                                    <img src={item.image} alt="" />
-                                                </div>
+                                    <TableCell>
+                                        <div className='py-4 text-sm text-[#795376] font-semibold'>Name</div>
+                                    </TableCell>
+
+                                    <TableCell>
+                                        <div className='py-4 text-sm text-[#795376] font-semibold'>Price</div>
+                                    </TableCell>
+
+                                    <TableCell>
+                                        <div className='py-4 text-sm text-[#795376] font-semibold'>Quantity</div>
+                                    </TableCell>
+
+                                    <TableCell width={155}>
+                                        <div className='py-4 text-sm text-[#795376] font-semibold'>Remove item</div>
+                                    </TableCell>
+
+                                    <TableCell>
+                                        <div className='py-4 text-sm text-[#795376] font-semibold'>Total</div>
+                                    </TableCell>
+                                </TableRow>
+                            </TableHead>
+
+                            <TableBody>
+                                {cart.map((item, index) => (
+                                    <TableRow
+                                        key={index}
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    >
+                                        <TableCell>
+                                            <div className='w-[200px] me-10 my-6'>
+                                                <img src={item.image} alt="" />
                                             </div>
-                                        </td>
+                                        </TableCell>
 
-                                        <td>
-                                            <div>
-                                                <p className='text-[#795376] text-[15px] font-normal'>{item.name}</p>
-                                            </div>
-                                        </td>
+                                        <TableCell>
+                                            <p className='text-[#795376] text-[15px] font-normal'>{item.name}</p>
+                                        </TableCell>
 
-                                        <td className='text-[#2a2a2a] text-sm font-bold'> &#8377; {item.price}</td>
+                                        <TableCell>
+                                            <p className='text-[#2a2a2a] text-sm font-bold text-center'>
+                                                &#36;{item.price}
+                                            </p>
+                                        </TableCell>
 
-                                        <td>
+                                        <TableCell>
                                             <div className='flex'>
                                                 <input type="text" value={item.digit} className='w-10 border border-[#eeeeee] text-center focus:outline-none' readOnly />
 
@@ -55,17 +82,20 @@ function ShoppingCart() {
                                                     <span className='border border-[#dddddd] px-[10px] cursor-pointer' onClick={() => decrease(item.id)}>-</span>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </TableCell>
 
-                                        <td className='text-[#2a2a2a] text-sm font-bold cursor-pointer' onClick={() => handledelete(item.id)} >Delete</td>
+                                        <TableCell onClick={() => handledelete(item.id)}>
+                                            <p className='text-[#2a2a2a] text-sm font-bold'>Delete</p>
+                                        </TableCell>
 
-                                        <td className='text-[#2a2a2a] text-sm font-bold'>&#8377; {(item.price * item.digit).toFixed(2)}</td>
-                                    </tr>
-                                )
-                            })
-                            }
-                        </tbody>
-                    </table>
+                                        <TableCell>
+                                            <p className='text-[#2a2a2a] text-sm font-bold'>&#36;{(item.price * item.digit).toFixed(2)}</p>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
 
                     <div className='md:flex justify-between py-[60px] border-[#dddddd] border-b items-center text-center'>
                         <div className='md:mb-0 mb-10'>
@@ -79,19 +109,19 @@ function ShoppingCart() {
 
                     <div className='flex justify-end py-[60px] border-[#dddddd] border-b'>
                         <p className='text-sm text-[#2a2a2a] font-bold me-40'>Subtotal</p>
-                        <p className='text-sm text-[#2a2a2a] font-bold'>&#8377; {totalamount}</p>
+                        <p className='text-sm text-[#2a2a2a] font-bold'>&#36;{totalamount}</p>
                     </div>
 
                     <div className='flex justify-end py-[60px] border-[#dddddd] border-b'>
                         <p className='text-sm text-[#2a2a2a] font-bold me-40'>Shipping</p>
 
-                        <p className='text-sm text-[#2a2a2a] font-bold'>&#8377; {shipping}</p>
+                        <p className='text-sm text-[#2a2a2a] font-bold'>&#36;{shipping}</p>
                     </div>
 
                     <div className='flex justify-end py-[60px] border-[#dddddd] border-b'>
                         <p className='text-sm text-[#2a2a2a] font-bold me-40'>Total</p>
 
-                        <p className='text-sm text-[#2a2a2a] font-bold'>&#8377; {totalamount + shipping}</p>
+                        <p className='text-sm text-[#2a2a2a] font-bold'>&#36;{totalamount + shipping}</p>
                     </div>
                 </div>
                 :

@@ -12,7 +12,7 @@ function CardCarousel() {
         >
             <div>
                 <div className='w-8/12 mx-auto'>
-                    <div className="relative after:absolute after:content-['\275D'] after:pt-[10px] after:text-5xl after:bg-[#E4D3DF] after:right-80 after:bottom-[-10px] after:h-[50px] after:w-[50px] after:rounded-full after:text-white after:font-[Flaticon]">
+                    <div className="relative after:absolute after:content-['\275D'] after:pt-[10px] after:text-5xl after:bg-[#E4D3DF] xl:after:right-80 lg:after:right-[280px] md:after:right-[200px] after:right-[85px] after:bottom-[-10px] after:h-[50px] after:w-[50px] after:rounded-full after:text-white after:font-[Flaticon]">
                         <img src="/assets/images/client_1.png.webp" />
                     </div>
 
@@ -23,7 +23,7 @@ function CardCarousel() {
 
             <div>
                 <div className='w-8/12 mx-auto'>
-                    <div className="relative after:absolute after:content-['\275D'] after:pt-[10px] after:text-5xl after:bg-[#E4D3DF] after:right-80 after:bottom-[-10px] after:h-[50px] after:w-[50px] after:rounded-full after:text-white after:font-[Flaticon]">
+                    <div className="relative after:absolute after:content-['\275D'] after:pt-[10px] after:text-5xl after:bg-[#E4D3DF] xl:after:right-80 lg:after:right-[280px] md:after:right-[200px] after:right-[85px] after:bottom-[-10px] after:h-[50px] after:w-[50px] after:rounded-full after:text-white after:font-[Flaticon]">
                         <img src="/assets/images/client_1.png.webp" />
                     </div>
 
@@ -34,7 +34,7 @@ function CardCarousel() {
 
             <div>
                 <div className='w-8/12 mx-auto'>
-                    <div className="relative after:absolute after:content-['\275D'] after:pt-[10px] after:text-5xl after:bg-[#E4D3DF] after:right-80 after:bottom-[-10px] after:h-[50px] after:w-[50px] after:rounded-full after:text-white after:font-[Flaticon]">
+                    <div className="relative after:absolute after:content-['\275D'] after:pt-[10px] after:text-5xl after:bg-[#E4D3DF] xl:after:right-80 lg:after:right-[280px] md:after:right-[200px] after:right-[85px] after:bottom-[-10px] after:h-[50px] after:w-[50px] after:rounded-full after:text-white after:font-[Flaticon]">
                         <img src="/assets/images/client_1.png.webp" />
                     </div>
 
