@@ -12,7 +12,6 @@ import {
 } from '@heroicons/react/24/outline'
 
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-import { CgSearch } from "react-icons/cg";
 import { FaCartShopping } from "react-icons/fa6";
 import { FiLogIn } from "react-icons/fi";
 import { Link } from 'react-router-dom';
@@ -20,7 +19,6 @@ import { useCart } from '../Context/CartContext';
 
 const products = [
     { name: 'Product List', to: '/productlist' },
-    // { name: 'Product Details', to: '/productdetail' },
 ]
 
 const pages = [
@@ -34,18 +32,12 @@ const blog = [
     { name: 'Single Blog', to: '/singleblog' },
 ]
 
-const callsToAction = [
-    { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
-
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-    const [search, setSearch] = useState()
     const { totalquantity } = useCart();
 
     return (
@@ -192,9 +184,13 @@ export default function Header() {
                         <sub className='absolute -top-1 -right-1 bg-[#B08EAD] text-white w-4 h-4 rounded-full flex items-center justify-center'>{totalquantity}</sub>
                     </Link>
 
+                    {/* {isLoggedIn ? (
+                        <p>Welcome, user!</p>
+                    ) : ( */}
                     <Link to="/login" className="text-sm font-semibold leading-6 text-gray-900">
                         <FiLogIn fontSize={25} />
                     </Link>
+                    {/* )} */}
                 </div>
             </nav>
 

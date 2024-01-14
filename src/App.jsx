@@ -10,6 +10,8 @@ import ShoppingCart from './pages/ShoppingCart';
 import ProductCheckout from './pages/ProductCheckout';
 import Contact from './pages/Contact';
 import { Helmet } from 'react-helmet';
+import Login from './auth/Login';
+import SignUp from './auth/SignUp';
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
         <Route path='/shoppingcart' element={<ShoppingCart />} />
         <Route path='/productcheckout' element={<ProductCheckout />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
       </Routes>
       <Footer />
     </Router>

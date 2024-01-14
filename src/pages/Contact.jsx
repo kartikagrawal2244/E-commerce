@@ -30,14 +30,11 @@ function Contact() {
                                     id="message"
                                     cols="30"
                                     rows="9"
-                                    // value={values.message}
-                                    // onChange={handleChange}
                                     placeholder='Enter Message'
                                     className='border border-[#f0e9ff] rounded-md ps-[18px] text-[13px] w-full focus:outline-none pt-3'
                                     required
                                 >
                                 </textarea>
-                                {/* {errors.message && touched.message && <p className='text-red-700 text-sm font-medium'>{errors.message}</p>} */}
 
                                 <ValidationError
                                     prefix="Message"
@@ -53,13 +50,10 @@ function Contact() {
                                         type="text"
                                         name="name"
                                         id="name"
-                                        // value={values.name}
-                                        // onChange={handleChange}
                                         className='border border-[#f0e9ff] rounded-md py-3 ps-[18px] text-[13px] w-full font-normal focus:outline-none'
                                         placeholder="Enter your name"
                                         required
                                     />
-                                    {/* {errors.name && touched.name && <p className='text-red-700 text-sm font-medium'>{errors.name}</p>} */}
 
                                     <ValidationError
                                         prefix="Name"
@@ -74,13 +68,10 @@ function Contact() {
                                         type="email"
                                         name="email"
                                         id="email"
-                                        // value={values.email}
                                         className='border border-[#f0e9ff] rounded-md py-3 ps-[18px] text-[13px] w-full font-normal focus:outline-none'
                                         placeholder="Enter email address"
-                                        // onChange={handleChange}
                                         required
                                     />
-                                    {/* {errors.email && touched.email && <p className='text-red-700 text-sm font-medium'>{errors.email}</p>} */}
                                     <ValidationError
                                         prefix="Email"
                                         field="email"
@@ -94,12 +85,9 @@ function Contact() {
                                     type="text"
                                     name="subject"
                                     id="subject"
-                                    // value={values.subject}
                                     className='border border-[#f0e9ff] rounded-md py-3 ps-[18px] text-[13px] w-full font-normal focus:outline-none'
                                     placeholder="Enter Subject"
-                                // onChange={handleChange}
                                 />
-                                {/* {errors.subject && touched.subject && <p className='text-red-700 text-sm font-medium'>{errors.subject}</p>} */}
 
                                 <ValidationError
                                     prefix="Subject"

@@ -7,10 +7,11 @@ import { useFilter } from '../Context/FilterContext';
 import Rating from '../comman/Rating';
 
 function Productlist() {
-    const { product } = useProduct();
-    const { handleSearchChange, filter, filterproducts, handleCategoryChange, handleSortby } = useFilter();
+    let { product } = useProduct();
+    let { handleSearchChange, filter, filterproducts, handleCategoryChange, handleSortby } = useFilter();
     const { text, category, sortby } = filter;
 
+    product = filterproducts;
     const uniqueCategories = Array.from(new Set(product.map((item) => item.category)));
 
     return (
@@ -29,8 +30,8 @@ function Productlist() {
                             <input
                                 type="search"
                                 placeholder='Search'
-                                name=""
-                                id=""
+                                name="search"
+                                id="search"
                                 className='w-full bg-[#F4EDF2] rounded-full border border-[#F4EDF2] py-[13px] px-[25px] leading-[25px] focus:outline-none focus:border-0'
                                 value={text}
                                 onChange={(e) => {
@@ -42,8 +43,8 @@ function Productlist() {
                         {/* Category Dropdown */}
                         <div className='mb-6'>
                             <select
-                                name=""
-                                id=""
+                                name="category"
+                                id="category"
                                 value={category}
                                 onChange={(e) => handleCategoryChange(e.target.value)}
                                 className='w-full bg-[#F4EDF2] rounded-full border border-[#F4EDF2] py-[13px] px-[25px] leading-[25px] focus:outline-none focus:border-0'
@@ -60,8 +61,8 @@ function Productlist() {
                         {/* Sort By Dropdown */}
                         <div className='mb-6'>
                             <select
-                                name=""
-                                id=""
+                                name="sortby"
+                                id="sortby"
                                 value={sortby}
                                 onChange={(e) => handleSortby(e.target.value)}
                                 className='w-full bg-[#F4EDF2] rounded-full border border-[#F4EDF2] py-[13px] px-[25px] leading-[25px] focus:outline-none focus:border-0'
@@ -78,7 +79,7 @@ function Productlist() {
                     {/* Product Display Section */}
                     <div className='xl:col-span-2'>
                         <div className='grid md:grid-cols-2 place-items-center gap-12'>
-                            {filterproducts.map((item) => (
+                            {product.map((item) => (
                                 <div key={item.id}>
                                     <img src={item.image} alt="product_image" className='max-w-48 mx-auto' />
 
