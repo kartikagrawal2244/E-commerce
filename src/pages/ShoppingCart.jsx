@@ -12,7 +12,7 @@ import HeroSection from '../comman/HeroSection';
 import { TableHead } from '@mui/material';
 
 function ShoppingCart() {
-    const { cart, cleardata, increase, decrease, shipping, totalamount, handledelete } = useCart();
+    const { cart, cleardata, increase, decrease, totalamount, handledelete } = useCart();
     const { isLoggedIn, name } = useAuth();
 
     return (
@@ -110,6 +110,7 @@ function ShoppingCart() {
                                             </TableBody>
                                         </Table>
                                     </TableContainer>
+                                    
                                     <div className='md:flex justify-between py-[60px] border-[#dddddd] border-b items-center text-center'>
                                         <div className='md:mb-0 mb-10'>
                                             <CommanButton
@@ -149,7 +150,7 @@ function ShoppingCart() {
                                 </div>
                             )}
                         </>
-                    )}  
+                    )}
                 </div>
             ) : (
                 <div className='py-[100px] max-w-6xl text-center mx-auto px-8'>

@@ -1,14 +1,18 @@
 import React from 'react'
 import HeroSection from '../comman/HeroSection'
+import { useCart } from '../Context/CartContext'
 
 function ProductCheckout() {
+
+    const { cart, totalamount, shipping } = useCart();
+
     return (
         <>
             <HeroSection
                 heading="Product Checkout"
             />
 
-            <div className='max-w-6xl mx-auto py-16 px-6'>  
+            <div className='max-w-6xl mx-auto py-16 px-6'>
                 <h4 className='text-[27px] font-semibold text-[#4B3049] leading-normal mb-4'>Billing Details</h4>
                 <div className='grid lg:grid-cols-3 gap-20'>
                     <div className='col-span-2'>
@@ -150,40 +154,59 @@ function ProductCheckout() {
                         </form>
                     </div>
 
-                    {/* <div>
-                        <div className='flex mb-6'>
-                            <div className='me-4'>
-                                <IoHomeOutline color='#8f9195' className='text-4xl' />
+                    <div className='bg-[#f4f4f4] p-6'>
+                        <h5 className='text-lg font-medium pb-4 text-[#2a2a2a] border-b border-[#dddddd]'>Your Order</h5>
+
+                        <div className='flex justify-between py-4 border-b border-[#dddddd]'>
+                            <div>
+                                <p className='text-sm text-[#795376]'>Product</p>
                             </div>
 
                             <div>
-                                <h5 className='text-[#2a2a2a] text-base font-medium'>Jaipur , Rajasthan.</h5>
-                                <p className='text-[#8a8a8a] text-[15px] font-normal leading-loose'>India , 302020</p>
+                                <p className='text-sm text-[#795376]'>Total</p>
                             </div>
                         </div>
 
-                        <div className='flex mb-6'>
-                            <div className='me-4'>
-                                <FaMobileScreen color='#8f9195' className='text-4xl' />
-                            </div>
+                        {cart.map((item, index) => {
+                            return (
+                                <div key={index} className='flex justify-between py-4 border-b border-[#dddddd]'>
+                                    <div className='w-36'>
+                                        <p className='text-sm text-[#795376]'>{item.name}</p>
+                                    </div>
 
-                            <div>
-                                <h5 className='text-[#2a2a2a] text-base font-medium'>6745365241</h5>
-                                <p className='text-[#8a8a8a] text-[15px] font-normal leading-loose'>Mon to Fri 9am to 6pm</p>
-                            </div>
+                                    <div className='w-12'>
+                                        <p>x {item.digit}</p>
+                                    </div>
+
+                                    <div>
+                                        <p className='text-sm text-[#795376]'>${item.price * item.digit}</p>
+                                    </div>
+                                </div>
+                            )
+                        })
+
+                        }
+
+                        <div className='flex justify-between py-4 border-[#dddddd] border-b'>
+                            <p className='text-sm text-[#2a2a2a] font-bold me-40'>Subtotal</p>
+                            <p className='text-sm text-[#2a2a2a] font-bold'>&#36;&nbsp;{totalamount}
+                            </p>
                         </div>
 
-                        <div className='flex'>
-                            <div className='me-4'>
-                                <CiMail color='#8f9195' className='text-4xl' />
-                            </div>
+                        <div className='flex justify-between py-4 border-[#dddddd] border-b'>
+                            <p className='text-sm text-[#2a2a2a] font-bold me-40'>Shipping</p>
 
-                            <div>
-                                <h5 className='text-[#2a2a2a] text-base font-medium'>support@example.com</h5>
-                                <p className='text-[#8a8a8a] text-[15px] font-normal leading-loose'>Send us your query anytime!</p>
-                            </div>
+                            <p className='text-sm text-[#2a2a2a] font-bold'>&#36;&nbsp;{shipping}
+                            </p>
                         </div>
-                    </div> */}
+
+                        <div className='flex justify-between py-4 border-[#dddddd] border-b'>
+                            <p className='text-sm text-[#2a2a2a] font-bold me-40'>Total</p>
+
+                            <p className='text-sm text-[#2a2a2a] font-bold'>&#36;&nbsp;{totalamount + shipping}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
