@@ -12,6 +12,9 @@ import Contact from './pages/Contact';
 import { Helmet } from 'react-helmet';
 import Login from './auth/Login';
 import SignUp from './auth/SignUp';
+import Confirmation from './pages/Confirmation';
+import Blog from './pages/Blog';
+import SingleBlog from './pages/SingleBlog';
 
 
 function App() {
@@ -35,6 +38,9 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path='/confirmation' element={<Confirmation />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/singleblog' element={<SingleBlog />} />
       </Routes>
       <Footer />
     </>

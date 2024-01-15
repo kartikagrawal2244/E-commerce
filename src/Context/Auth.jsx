@@ -63,6 +63,7 @@ export const Authenticate = ({ children }) => {
     const handlelogout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('username');
+        alert('You have been logged out')
         dispatch({ type: 'LOGOUT' });
     };
 

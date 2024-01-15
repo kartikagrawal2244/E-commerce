@@ -3,6 +3,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import { FaMobileScreen } from "react-icons/fa6";
 import { CiMail } from "react-icons/ci";
 import { useForm, ValidationError } from '@formspree/react';
+import HeroSection from '../comman/HeroSection';
 
 function Contact() {
 
@@ -15,9 +16,9 @@ function Contact() {
 
     return (
         <>
-            <div className='bg-[#B08EAD] py-[150px] text-[50px] leading-tight font-medium capitalize'>
-                <h1 className='text-center text-white'>Contact us</h1>
-            </div>
+             <HeroSection
+                heading="Contact Us"
+            />
 
             <div className='max-w-6xl mx-auto py-16 px-6'>
                 <h4 className='text-[27px] font-semibold text-[#4B3049] leading-normal mb-4'>Get in Touch</h4>

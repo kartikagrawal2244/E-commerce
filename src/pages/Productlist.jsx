@@ -6,17 +6,18 @@ import { useFilter } from '../Context/FilterContext';
 import Rating from '../comman/Rating';
 import Subscribe from '../comman/Subscribe';
 import Filter from '../component/Filter';
+import HeroSection from '../comman/HeroSection';
 
 function Productlist() {
     const { filterproducts } = useFilter();
     // console.log(filterproducts)
 
-    return (    
+    return (
         <>
             {/* Header Section */}
-            <div className='bg-[#B08EAD] py-[150px] text-[50px] leading-tight font-medium capitalize'>
-                <h1 className='text-center text-white uppercase'>product list</h1>
-            </div>
+            <HeroSection
+                heading="Productlist"
+            />
 
             {/* Filter Section */}
             <div className='max-w-6xl mx-auto py-[120px]'>

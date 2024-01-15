@@ -2,13 +2,14 @@ import React from 'react'
 import CardCarousel from '../component/Carousel'
 import Delivery from '../comman/Delivery'
 import Subscribe from '../comman/Subscribe'
+import HeroSection from '../comman/HeroSection'
 
 function About() {
     return (
         <>
-            <div className='bg-[#B08EAD] py-[150px] text-[50px] leading-tight font-medium capitalize'>
-                <h1 className='text-center text-white'>About</h1>
-            </div>
+            <HeroSection
+                heading="About"
+            />
 
             <div className='max-w-3xl mx-auto pt-24'>
                 <h4 className='text-[#B08EAD] text-xl font-normal mb-3' >Our Mission</h4>
@@ -19,7 +20,7 @@ function About() {
 
             </div>
 
-            <Delivery />
+            <Delivery />    
 
             <div className='bg-[#B08EAD] py-[100px]'>
                 <div className='max-w-6xl mx-auto'>

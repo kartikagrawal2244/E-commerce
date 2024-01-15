@@ -86,36 +86,6 @@ function ProductDetail() {
                 <Link to="/shoppingcart" onClick={() => addtocart(currentProduct , digit)} className='py-4 px-12 hover:bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] hover:text-white text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]'>add to cart</Link>
             </div >
 
-            {/* 
-            <div className='max-w-4xl mx-auto text-center pb-[100px]'>
-                <h3 className='text-[40px] leading-normal text-[#4B3049] font-medium max-w-xl mx-auto mb-10'>Foam filling cotton slow
-                    rebound pillows</h3>
-
-                <p className='text-[#707070] text-base font-normal leading-loose mb-10'>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.</p>
-
-                <div className='flex justify-center mb-16 items-center'>
-                    <h4 className='text-[#795376] text-base font-normal me-6'>Quantity</h4>
-
-                    <div className='flex' >
-                        <button
-                            type='button'
-                            className='py-3 px-5 border border-[#B08EAD] text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]'
-                            onClick={() => digit > 0 && setDigit(digit - 1)}
-                        >
-                            -
-                        </button>
-
-                        <input type="text" className='w-10 bg-[#795376] text-center focus:outline-none text-white' readOnly value={digit} />
-
-                        <button type='button' className='py-3 px-5 border border-[#B08EAD] text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]' onClick={() => setDigit(digit + 1)} >+</button>
-                    </div>
-
-                    <p className='text-[#795376] text-base font-normal ms-6'>$5</p>
-                </div>
-
-                <Link to="/shoppingcart" onClick={() => addtocart()} className='py-4 px-12 hover:bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] hover:text-white text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]'>add to cart</Link>
-            </div > */}
-
             <div className='bg-[#4B3049] text-center py-[200px]'>
                 <h2 className='text-white text-[40px] leading-normal font-semibold mb-2'>Get promotions & updates!</h2>
 
