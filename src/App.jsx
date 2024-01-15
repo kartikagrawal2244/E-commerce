@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './layout/Header';
 import Home from './pages/Home';
@@ -16,7 +16,7 @@ import SignUp from './auth/SignUp';
 
 function App() {
   return (
-    <Router>
+    <>
       <Header />
 
       <Helmet>
@@ -24,7 +24,7 @@ function App() {
         <meta name='description' content='Explore a diverse selection of high-quality products on our multi-item ecommerce platform. From electronics to fashion, home decor to accessories, discover an extensive range of items that cater to every taste and need. Shop with confidence and enjoy a seamless online shopping experience with secure transactions and prompt delivery.' />
         <meta name="keywords" content="Buy item you need" />
       </Helmet>
-      
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -37,7 +37,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
       </Routes>
       <Footer />
-    </Router>
+    </>
   );
 }
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { useCart } from '../Context/CartContext';
-import { Link } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -120,22 +119,12 @@ function ShoppingCart() {
                         <p className='text-sm text-[#2a2a2a] font-bold'>&#36;{totalamount}</p>
                     </div>
 
-                    <div className='md:flex justify-end py-[60px] items-center text-center'>
-                        <div className='md:mb-0 mb-16 md:me-5'>
-                            <CommanButton
-                                to="/productlist"
-                                name="Continue shopping"
-                            />
-                        </div>
-
-                        <div>
-                            <CommanButton
-                                to="/productlist"
-                                name="Proceed To Checkout"
-                            />
-                        </div>
+                    <div className='py-[60px] md:text-end text-center'>
+                        <CommanButton
+                            to="/productcheckout"
+                            name="Proceed To Checkout"
+                        />
                     </div>
-
 
                     {/* 
                     <div className='flex justify-end py-[60px] border-[#dddddd] border-b'>
@@ -154,7 +143,10 @@ function ShoppingCart() {
                 <div className='text-center'>
                     <h4 className='text-4xl text-[#B08EAD] font-semibold mt-12 mb-12'>Your Cart is Empty ! </h4>
 
-                    <Link to="/productlist" className='py-4 px-12 bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] text-white text-base font-medium transition-all hover:bg-transparent hover:text-[#B08EAD] ease-in-out duration-[0.5s] uppercase'>Add Product</Link>
+                    <CommanButton
+                        to="/productlist"
+                        name="Add Product"
+                    />
                 </div>
             }
         </>

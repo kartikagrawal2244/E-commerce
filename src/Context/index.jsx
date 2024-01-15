@@ -9,6 +9,7 @@ const initialstate = {
 }
 
 const ProductProvider = ({ children }) => {
+    
     const [state, dispatch] = useReducer(Reducer, initialstate)
 
     function getapi() {

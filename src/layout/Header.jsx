@@ -2,24 +2,16 @@ import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 
 import {
-    ArrowPathIcon,
     Bars3Icon,
-    ChartPieIcon,
-    CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { FaCartShopping } from "react-icons/fa6";
 import { FiLogIn } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import { useCart } from '../Context/CartContext';
-
-const products = [
-    { name: 'Product List', to: '/productlist' },
-]
+import { useAuth } from '../Context/Auth';
 
 const pages = [
     { name: 'Product Checkout', to: '/productcheckout' },
@@ -39,6 +31,7 @@ function classNames(...classes) {
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const { totalquantity } = useCart();
+    const { isLoggedIn, name , handlelogout } = useAuth();
 
     return (
         <header className="bg-white sticky z-10 top-0">
@@ -71,39 +64,12 @@ export default function Header() {
                         About
                     </Link>
 
-                    <Popover className="relative">
-                        <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                            Product
-                            <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                        </Popover.Button>
-
-                        <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-200"
-                            enterFrom="opacity-0 translate-y-1"
-                            enterTo="opacity-100 translate-y-0"
-                            leave="transition ease-in duration-150"
-                            leaveFrom="opacity-100 translate-y-0"
-                            leaveTo="opacity-0 translate-y-1"
-                        >
-                            <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 min-w-44 overflow-hidden rounded-3xl bg-[#B08EAD] shadow-lg ring-1 ring-gray-900/5">
-                                <div className="p-4">
-                                    {products.map((item) => (
-                                        <div
-                                            key={item.name}
-                                            className="group flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6"
-                                        >
-                                            <div className="flex-auto">
-                                                <Link to={item.to} className="block font-semibold text-white">
-                                                    {item.name}
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </Popover.Panel>
-                        </Transition>
-                    </Popover>
+                    <Link
+                        to="/productlist"
+                        className="text-sm font-semibold leading-6 text-gray-900"
+                    >
+                        Product List
+                    </Link>
 
                     <Popover className="relative">
                         <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
@@ -178,19 +144,51 @@ export default function Header() {
                     </Link>
                 </Popover.Group>
 
-                <div className="flex order-3 lg:flex-1 justify-end">
+                <div className="flex order-3 lg:flex-1 justify-end items-center">
                     <Link to="/shoppingcart" className="relative text-sm font-semibold me-4 leading-6 text-gray-900">
                         <FaCartShopping fontSize={25} />
                         <sub className='absolute -top-1 -right-1 bg-[#B08EAD] text-white w-4 h-4 rounded-full flex items-center justify-center'>{totalquantity}</sub>
                     </Link>
 
-                    {/* {isLoggedIn ? (
-                        <p>Welcome, user!</p>
-                    ) : ( */}
-                    <Link to="/login" className="text-sm font-semibold leading-6 text-gray-900">
-                        <FiLogIn fontSize={25} />
-                    </Link>
-                    {/* )} */}
+                    {isLoggedIn ? (
+
+                        <Popover className="relative">
+                            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 md:w-40 w-20">
+                                Welcome, {name}
+                                <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                            </Popover.Button>
+
+                            <Transition
+                                as={Fragment}
+                                enter="transition ease-out duration-200"
+                                enterFrom="opacity-0 translate-y-1"
+                                enterTo="opacity-100 translate-y-0"
+                                leave="transition ease-in duration-150"
+                                leaveFrom="opacity-100 translate-y-0"
+                                leaveTo="opacity-0 translate-y-1"
+                            >
+                                <Popover.Panel className="absolute top-full z-10 mt-3 md:min-w-32 min-w-24 overflow-hidden rounded-xl text-center bg-[#B08EAD] shadow-lg ring-1 ring-gray-900/5">
+                                    <div>
+                                        <div
+                                            className="group flex items-center gap-x-6 rounded-lg p-2 py-3 text-sm leading-6"
+                                        >
+                                            <div className="flex-auto">
+                                                <Link to="/login" onClick={handlelogout} className="block font-semibold text-white">
+                                                    Log Out
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Popover.Panel>
+                            </Transition>
+                        </Popover>
+
+
+                    ) : (
+                        <Link to="/login" className="text-sm font-semibold leading-6 text-gray-900">
+                            <FiLogIn fontSize={25} />
+                        </Link>
+                    )}
                 </div>
             </nav>
 
@@ -232,31 +230,12 @@ export default function Header() {
                                     About
                                 </Link>
 
-                                <Disclosure as="div" className="-mx-3">
-                                    {({ open }) => (
-                                        <>
-                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                                Product
-                                                <ChevronDownIcon
-                                                    className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
-                                                    aria-hidden="true"
-                                                />
-                                            </Disclosure.Button>
-
-                                            <Disclosure.Panel className="mt-2 space-y-2">
-                                                {products.map((item) => (
-                                                    <Link
-                                                        key={item.name}
-                                                        to={item.to}
-                                                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                                    >
-                                                        {item.name}
-                                                    </Link>
-                                                ))}
-                                            </Disclosure.Panel>
-                                        </>
-                                    )}
-                                </Disclosure>
+                                <Link
+                                    to="/productlist"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                >
+                                    Product List
+                                </Link>
 
                                 <Disclosure as="div" className="-mx-3">
                                     {({ open }) => (

@@ -1,56 +1,15 @@
-import { useFormik } from 'formik'
+// import { useFormik } from 'formik'
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { loginvalidation } from '../schema/Index';
+import { Link } from 'react-router-dom'
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { useAuth } from '../Context/Auth';
 
 
 function Login() {
 
     const [eye, setEye] = useState(false);
 
-    const Navigate = useNavigate();
-
-    const { handleSubmit, handleChange, values, errors, touched } = useFormik({
-        initialValues: {
-            username: '',
-            password: '',
-            check: false
-        },
-        validationSchema: loginvalidation,
-        onSubmit: (values, action) => {
-            fetch('https://fakestoreapi.com/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    username: values.username,
-                    password: values.password,
-                    check: values.check,
-                })
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Login failed');
-                    }
-
-                    return response.json();
-                })
-                .then(data => {
-                    console.log(data);
-                    alert("Login successful");
-                    Navigate("/")
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                })
-                .finally(() => {
-                    action.resetForm();
-                });
-        }
-    });
-
+    const { handleSubmit, handleChange, errors, touched, values } = useAuth();
 
     return (
         <>
