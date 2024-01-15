@@ -4,7 +4,8 @@ import Reducer from "../Reducer/Index"
 const Product = createContext()
 
 const initialstate = {
-    product: []
+    product: [],
+    homeproduct: [],
 }
 
 const ProductProvider = ({ children }) => {
@@ -28,8 +29,27 @@ const ProductProvider = ({ children }) => {
             });
     }
 
+    function homeapi() {
+        fetch(`https://fakestoreapi.com/products?limit=6`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // console.log(data);
+                const homeproduct = data;
+                dispatch({ type: 'HOMEAPI', payload: homeproduct })
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+
     useEffect(() => {
         getapi();
+        homeapi();
     }, [])
 
     return <Product.Provider value={{ ...state }}>{children}</Product.Provider>

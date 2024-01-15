@@ -29,47 +29,34 @@ export const FilterReducer = (state, action) => {
                 },
             };
 
-        case 'FILTER_ITEM':
-            const { allproduct, filter } = state;
-            const { text, category, sortby } = filter;
+        case 'FILTER_AND_LOAD_DATA':
 
-            const newdata = allproduct.filter((item) => {
+            const { allproduct } = state;
+            const { text, category, sortby } = state.filter;
+
+            const filteredData = allproduct.filter((item) => {
                 const textMatch = item.title.toLowerCase().includes(text.toLowerCase());
                 const categoryMatch = category === 'all' || item.category === category;
-
                 return textMatch && categoryMatch;
             });
 
-            let sortedData = [...newdata];
-
-            if (sortby !== 'all') {
-                sortedData.sort((a, b) => {
-                    if (sortby === 'a-z') {
-                        return a.title.localeCompare(b.title);
-                    } else if (sortby === 'z-a') {
-                        return b.title.localeCompare(a.title);
-                    } else if (sortby === 'low-to-high') {
-                        return a.price - b.price;
-                    } else if (sortby === 'high-to-low') {
-                        return b.price - a.price;
-                    }
-
-                    return 0;
-                });
-            }
+            const sortedData = sortData(filteredData, sortby);
 
             return {
                 ...state,
                 filterproducts: sortedData,
-            };
-
-        case 'LOAD_DATA':
-            return {
-                ...state,
-                allproduct: action.payload,
+                allproduct: [...action.payload],
             };
 
         default:
             return state;
     }
+};  
+
+const sortData = (data, sortby) => {
+    if (sortby === 'a-z') return data.sort((a, b) => a.title.localeCompare(b.title));
+    if (sortby === 'z-a') return data.sort((a, b) => b.title.localeCompare(a.title));
+    if (sortby === 'low-to-high') return data.sort((a, b) => a.price - b.price);
+    if (sortby === 'high-to-low') return data.sort((a, b) => b.price - a.price);
+    return data;
 };

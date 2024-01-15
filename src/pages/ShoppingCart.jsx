@@ -7,6 +7,8 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { CommanButton } from '../comman/Button';
+import { OnclickButton } from '../comman/OnclickButton';
 
 
 function ShoppingCart() {
@@ -20,7 +22,7 @@ function ShoppingCart() {
 
             {cart.length > 0 ?
                 <div className='py-[100px] max-w-6xl m-auto px-8' >
-                    <TableContainer>
+                    <TableContainer className='border-[#dddddd] border-b'>
                         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                             <TableHead>
                                 <TableRow>
@@ -85,7 +87,7 @@ function ShoppingCart() {
                                         </TableCell>
 
                                         <TableCell onClick={() => handledelete(item.id)}>
-                                            <p className='text-[#2a2a2a] text-sm font-bold'>Delete</p>
+                                            <p className='text-[#2a2a2a] text-sm font-bold cursor-pointer'>Delete</p>
                                         </TableCell>
 
                                         <TableCell>
@@ -99,11 +101,17 @@ function ShoppingCart() {
 
                     <div className='md:flex justify-between py-[60px] border-[#dddddd] border-b items-center text-center'>
                         <div className='md:mb-0 mb-10'>
-                            <Link to="/productlist" className='py-4 px-12 bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] text-white text-base font-medium transition-all hover:bg-transparent hover:text-[#B08EAD] ease-in-out duration-[0.5s] uppercase'>Continue shopping</Link>
+                            <CommanButton
+                                to="/productlist"
+                                name="Continue shopping"
+                            />
                         </div>
 
                         <div>
-                            <button onClick={cleardata} className='py-4 px-12 bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] text-white text-base font-medium transition-all hover:bg-transparent hover:text-[#B08EAD] ease-in-out duration-[0.5s] uppercase'>clear cart</button>
+                            <OnclickButton
+                                onClick={cleardata}
+                                name="clear cart"
+                            />
                         </div>
                     </div>
 
@@ -112,6 +120,24 @@ function ShoppingCart() {
                         <p className='text-sm text-[#2a2a2a] font-bold'>&#36;{totalamount}</p>
                     </div>
 
+                    <div className='md:flex justify-end py-[60px] items-center text-center'>
+                        <div className='md:mb-0 mb-16 md:me-5'>
+                            <CommanButton
+                                to="/productlist"
+                                name="Continue shopping"
+                            />
+                        </div>
+
+                        <div>
+                            <CommanButton
+                                to="/productlist"
+                                name="Proceed To Checkout"
+                            />
+                        </div>
+                    </div>
+
+
+                    {/* 
                     <div className='flex justify-end py-[60px] border-[#dddddd] border-b'>
                         <p className='text-sm text-[#2a2a2a] font-bold me-40'>Shipping</p>
 
@@ -122,7 +148,7 @@ function ShoppingCart() {
                         <p className='text-sm text-[#2a2a2a] font-bold me-40'>Total</p>
 
                         <p className='text-sm text-[#2a2a2a] font-bold'>&#36;{totalamount + shipping}</p>
-                    </div>
+                    </div> */}
                 </div>
                 :
                 <div className='text-center'>

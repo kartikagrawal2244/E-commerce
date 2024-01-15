@@ -19,13 +19,15 @@ export const FilterProvider = ({ children }) => {
 
     const { product } = useProduct();
 
-    const [state , dispatch] = useReducer(FilterReducer, initialstate);
+    const [state, dispatch] = useReducer(FilterReducer, initialstate);
 
     const handleSearchChange = (searchText) => {
+        console.log(searchText);
         dispatch({ type: 'SET_TEXT', payload: searchText });
     };
 
     const handleCategoryChange = (selectedCategory) => {
+        console.log(selectedCategory);
         dispatch({ type: 'SET_CATEGORY', payload: selectedCategory });
     };
 
@@ -34,8 +36,7 @@ export const FilterProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        dispatch({ type: "FILTER_ITEM"})
-        dispatch({ type: "LOAD_DATA", payload: product })
+        dispatch({ type: "FILTER_AND_LOAD_DATA", payload: product })
     }, [product, state.filter])
 
 

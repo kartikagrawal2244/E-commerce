@@ -8,6 +8,12 @@ const Reducer = (state, action) => {
               ...state,
                 product: action.payload
             }
+
+        case "HOMEAPI":
+            return {
+              ...state,
+                homeproduct: action.payload
+            }
     
         default:
             return state;
