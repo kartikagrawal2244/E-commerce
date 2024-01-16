@@ -24,3 +24,20 @@ export const signupvalidation = () => {
 
     })
 }
+
+export const checkoutvalidationschema = () => {
+    return yup.object().shape({
+        firstname: yup.string().min(3).max(25).required("firstname is required"),
+        lastname: yup.string().min(3).max(25),
+        email: yup.string().email().required("email is required"),
+        phone: yup.number().min(10).required("phone is required"),
+        country: yup.string().required("country is required"),
+        postcode: yup.number().required("postcode is required"),
+        state: yup.string().required("state is required"),
+        district: yup.string().required("district is required"),
+        ordernotes: yup.string(),
+        address1: yup.string().required("address is required"),
+        address2: yup.string(),
+        city: yup.string().required("city is required"),
+    })
+}

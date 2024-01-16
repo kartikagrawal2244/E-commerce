@@ -7,7 +7,7 @@ import { ProductProvider } from './Context';
 import { CartProvider } from './Context/CartContext';
 import { FilterProvider } from './Context/FilterContext';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Authenticate } from './Context/Auth';
+import { Authenticate } from './Context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

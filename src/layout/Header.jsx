@@ -11,10 +11,9 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FiLogIn } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import { useCart } from '../Context/CartContext';
-import { useAuth } from '../Context/Auth';
+import { useAuth } from '../Context/AuthContext';
 
 const pages = [
-    { name: 'Product Checkout', to: '/productcheckout' },
     { name: 'Shopping Cart', to: '/shoppingcart' },
     { name: 'Confirmation', to: '/confirmation' },
 ]

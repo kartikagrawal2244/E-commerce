@@ -1,5 +1,3 @@
-// FilterReducer.js
-
 export const FilterReducer = (state, action) => {
     switch (action.type) {
         case 'SET_TEXT':
@@ -51,7 +49,7 @@ export const FilterReducer = (state, action) => {
         default:
             return state;
     }
-};  
+};
 
 const sortData = (data, sortby) => {
     if (sortby === 'a-z') return data.sort((a, b) => a.title.localeCompare(b.title));

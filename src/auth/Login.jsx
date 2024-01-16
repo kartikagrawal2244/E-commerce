@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { useAuth } from '../Context/Auth';
+import { useAuth } from '../Context/AuthContext';
 
 
 function Login() {

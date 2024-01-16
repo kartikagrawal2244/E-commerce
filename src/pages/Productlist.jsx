@@ -10,7 +10,6 @@ import HeroSection from '../comman/HeroSection';
 
 function Productlist() {
     const { filterproducts } = useFilter();
-    // console.log(filterproducts)
 
     return (
         <>

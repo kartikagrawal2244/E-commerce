@@ -1,4 +1,3 @@
-// Authenticate.js
 
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { useFormik } from "formik";
