@@ -7,9 +7,13 @@ import Rating from '../comman/Rating';
 import Subscribe from '../comman/Subscribe';
 import Filter from '../component/Filter';
 import HeroSection from '../comman/HeroSection';
+import { useProduct } from '../Context';
 
 function Productlist() {
-    const { filterproducts } = useFilter();
+    let { filterproducts } = useFilter();
+    let {product} = useProduct();
+
+    product = filterproducts;
 
     return (
         <>
@@ -28,7 +32,7 @@ function Productlist() {
                     {/* Product Display Section */}
                     <div className='xl:col-span-2'>
                         <div className='grid md:grid-cols-2 place-items-center gap-12'>
-                            {filterproducts.map((item) => (
+                            {product.map((item) => (
                                 <div key={item.id}>
                                     <img src={item.image} alt="product_image" className='max-w-48 mx-auto' />
 
