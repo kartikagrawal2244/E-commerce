@@ -6,6 +6,7 @@ const Product = createContext()
 const initialstate = {
     product: [],
     homeproduct: [],
+    isloading: true,
 }
 
 const ProductProvider = ({ children }) => {

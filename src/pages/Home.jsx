@@ -8,7 +8,7 @@ import { useProduct } from '../Context'
 
 function Home() {
 
-    const { homeproduct } = useProduct();
+    const { homeproduct, isloading } = useProduct();
 
     return (
         <>
@@ -110,18 +110,45 @@ function Home() {
                     <h2 className='text-[#4B3049] text-4xl font-bold text-center'>Trending Items</h2>
 
                     <div className='grid lg:grid-cols-3 md:grid-cols-2 lg:px-0 px-7 gap-20 mt-16'>
-
-                        {homeproduct.map((product, index) => (
-                            <div key={index}>
-                                <img src={product.image} alt="treding_poduct" className='w-80 mx-auto' />
-
-                                <Link to="productlist" className='text-2xl mt-[22px] font-medium text-[#4B3049] hover:text-[#795376] inline-block mb-2 uppercase transition ease-in-out duration-[0.5s]'>
-                                    {product.title}
-                                </Link>
-
-                                <p className='text-xl font-normal text-[#795376] capitalize line-clamp-3'>{product.description}</p>
+                        {isloading ?
+                            <div className="flex items-center justify-center">
+                                <svg
+                                    className="animate-spin h-10 w-10 text-[#B08EAD] me-2"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <circle
+                                        className="opacity-25"
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                    ></circle>
+                                    <path
+                                        className="opacity-75"
+                                        fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 6.627 5.373 12 12 12v-4c-4.418 0-8-3.582-8-8z"
+                                    ></path>
+                                </svg>
+                                <p className='text-base text-slate-500'>Loading</p>
                             </div>
-                        ))}
+                            :
+                            <>
+                                {homeproduct.map((product, index) => (
+                                    <div key={index}>
+                                        <img src={product.image} alt="treding_poduct" className='w-80 mx-auto' />
+
+                                        <Link to="productlist" className='text-2xl mt-[22px] font-medium text-[#4B3049] hover:text-[#795376] inline-block mb-2 uppercase transition ease-in-out duration-[0.5s]'>
+                                            {product.title}
+                                        </Link>
+
+                                        <p className='text-xl font-normal text-[#795376] capitalize line-clamp-3'>{product.description}</p>
+                                    </div>
+                                ))}
+                            </>
+                        }
                     </div>
                 </div>
             </div>

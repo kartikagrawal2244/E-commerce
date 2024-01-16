@@ -6,12 +6,14 @@ const Reducer = (state, action) => {
         case "API":
             return {
                 ...state,
-                product: action.payload
+                isloading:false,
+                product: action.payload,
             }
 
         case "HOMEAPI":
             return {
                 ...state,
+                isloading:false,
                 homeproduct: action.payload
             }
             

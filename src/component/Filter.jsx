@@ -13,7 +13,7 @@ function Filter() {
     const uniqueCategories = Array.from(new Set(product.map((item) => item.category)));
 
     return (
-        <div className='xl:block md:flex justify-between'>
+        <div className='flex xl:flex-col md:flex-row flex-col justify-between'>
             {/* Search Input */}
             <div className='mb-6'>
                 <input

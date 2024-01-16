@@ -64,7 +64,7 @@ function SignUp() {
                     <img src="/assets/images/22112339_6538623.jpg" alt="heroimage" className='w-11/12 mx-auto my-auto' />
                 </div>
 
-                <div className='w-5/6 my-auto'>
+                <div className='w-5/6 my-auto lg:mx-0 mx-auto'>
                     <h3 className='text-[26px] leading-9 mb-20 text-[#4B3049] uppercase font-bold'>Welcome Back !
                         <br /> Please Sign up now</h3>
 
