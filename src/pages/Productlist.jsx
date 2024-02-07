@@ -13,10 +13,12 @@ function Productlist() {
     const { filterproducts } = useFilter();
     const { product, isloading } = useProduct();
 
-    const [filteredProduct, setFilteredProduct] = useState(product);
+    const [filteredProduct, setFilteredProduct] = useState([]);
 
-    if (filterproducts) {
+    if (filterproducts !== null ) {
         setFilteredProduct(filterproducts);
+    }else{
+        setFilteredProduct(product);
     }
 
     console.log(filteredProduct);
