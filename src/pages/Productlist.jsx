@@ -15,11 +15,11 @@ function Productlist() {
 
     const [filteredProduct, setFilteredProduct] = useState(product);
     
-    useEffect(() => {
-        if (filterproducts) {
-            setFilteredProduct(filterproducts);
-        }
-    }, [filterproducts]);
+    // useEffect(() => {
+    //     if (filterproducts) {
+    //         setFilteredProduct(filterproducts);
+    //     }
+    // }, [filterproducts]);
     
     console.log(filteredProduct);
     return (
