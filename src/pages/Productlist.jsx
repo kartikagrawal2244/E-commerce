@@ -15,7 +15,7 @@ function Productlist() {
 
     const [filteredProduct, setFilteredProduct] = useState([]);
 
-    if (filterproducts !== null ) {
+    if (filterproducts !== undefined ) {
         setFilteredProduct(filterproducts);
     }else{
         setFilteredProduct(product);
