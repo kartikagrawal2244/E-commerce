@@ -11,7 +11,7 @@ function About() {
                 heading="About"
             />
 
-            <div className='max-w-3xl mx-auto pt-24'>
+            <div className='max-w-3xl mx-auto pt-24 px-7 lg:px-0'>
                 <h4 className='text-[#B08EAD] text-xl font-normal mb-3' >Our Mission</h4>
 
                 <p className='text-[#4B3049] font-normal text-2xl mt-[5px] mb-[60px]'>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.</p>

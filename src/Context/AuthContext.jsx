@@ -51,10 +51,6 @@ export const Authenticate = ({ children }) => {
                     dispatch({ type: 'LOGIN_SUCCESS', payload: values.username });
                     action.resetForm();
                     Navigate("/")
-                    setTimeout(() => {
-                        handlelogout();
-                        Navigate("/login");
-                    }, 1000);
                 })
 
                 .catch(error => {
