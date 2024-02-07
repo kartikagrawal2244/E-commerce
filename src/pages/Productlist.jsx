@@ -13,12 +13,7 @@ function Productlist() {
     const { filterproducts } = useFilter();
     const { product, isloading } = useProduct();
 
-    const [filteredProduct, setFilteredProduct] = useState([]);
-
-    
-    useEffect(() => {
-        setFilteredProduct(product);
-    }, [product]);
+    const [filteredProduct, setFilteredProduct] = useState(product);
     
     useEffect(() => {
         if (filterproducts) {
