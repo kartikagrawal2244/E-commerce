@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CardCarousel from '../component/Carousel';
 import Delivery from '../comman/Delivery';
 import { Link } from 'react-router-dom';
@@ -10,11 +10,21 @@ import HeroSection from '../comman/HeroSection';
 import { useProduct } from '../Context';
 
 function Productlist() {
-    let { filterproducts } = useFilter();
-    let { product, isloading } = useProduct();
+    const { filterproducts } = useFilter();
+    const { product, isloading } = useProduct();
 
-    product = filterproducts ? filterproducts : product;
-    console.log(product);
+    const [filteredProduct, setFilteredProduct] = useState([]);
+
+    
+    useEffect(() => {
+        if (filterproducts) {
+            setFilteredProduct(filterproducts);
+        }else{
+            setFilteredProduct(product);
+        }
+    }, [filterproducts , product]);
+    
+    console.log(filteredProduct);
 
     return (
         <>
@@ -60,7 +70,7 @@ function Productlist() {
                                 :
                                 <>
                                     {
-                                        product.map((item) => (
+                                        filteredProduct.map((item) => (
                                             <div key={item.id}>
                                                 <img src={item.image} alt="product_image" className='max-w-48 mx-auto' />
 
