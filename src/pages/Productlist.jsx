@@ -17,15 +17,16 @@ function Productlist() {
 
     
     useEffect(() => {
+        setFilteredProduct(product);
+    }, [product]);
+    
+    useEffect(() => {
         if (filterproducts) {
             setFilteredProduct(filterproducts);
-        }else{
-            setFilteredProduct(product);
         }
-    }, [filterproducts , product]);
+    }, [filterproducts]);
     
     console.log(filteredProduct);
-
     return (
         <>
             {/* Header Section */}
