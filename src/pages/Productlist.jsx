@@ -12,8 +12,7 @@ import { useProduct } from '../Context';
 function Productlist() {
     let { filterproducts } = useFilter();
     let { product, isloading } = useProduct();
-
-    product = filterproducts;
+    let products = filterproducts ? filterproducts : product;
 
     return (
         <>
@@ -59,7 +58,7 @@ function Productlist() {
                                 :
                                 <>
                                     {
-                                        product.map((item) => (
+                                        products.map((item) => (
                                             <div key={item.id}>
                                                 <img src={item.image} alt="product_image" className='max-w-48 mx-auto' />
 
