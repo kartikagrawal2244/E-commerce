@@ -10,8 +10,9 @@ import HeroSection from '../comman/HeroSection';
 import { useProduct } from '../Context';
 
 function Productlist() {
-    let { filterproducts } = useFilter();
+    let { allproduct , filterproducts } = useFilter();
     let { isloading } = useProduct();
+    const product = filterproducts.length > 0 ? filterproducts : allproduct;
 
     return (
         <>
@@ -57,7 +58,7 @@ function Productlist() {
                                 :
                                 <>
                                     {
-                                        filterproducts.map((item) => (
+                                        product.map((item) => (
                                             <div key={item.id}>
                                                 <img src={item.image} alt="product_image" className='max-w-48 mx-auto' />
 
