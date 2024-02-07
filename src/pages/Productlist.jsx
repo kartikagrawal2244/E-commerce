@@ -13,9 +13,6 @@ function Productlist() {
     let { filterproducts } = useFilter();
     let { product, isloading } = useProduct();
 
-    product = filterproducts ? filterproducts : product;
-    console.log(product);
-
     return (
         <>
             {/* Header Section */}
