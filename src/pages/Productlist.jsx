@@ -14,13 +14,11 @@ function Productlist() {
     const { product, isloading } = useProduct();
 
     const [filteredProduct, setFilteredProduct] = useState(product);
-    
-    // useEffect(() => {
-    //     if (filterproducts) {
-    //         setFilteredProduct(filterproducts);
-    //     }
-    // }, [filterproducts]);
-    
+
+    if (filterproducts) {
+        setFilteredProduct(filterproducts);
+    }
+
     console.log(filteredProduct);
     return (
         <>
