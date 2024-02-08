@@ -164,7 +164,7 @@ export default function Header() {
 
                         <Link to="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
-                            <img className="h-8 w-auto" src="/assets/logo.png" alt="" />
+                            <img className="h-7 w-auto" src="/assets/logo.png" alt="" />
                         </Link>
 
                         <button
