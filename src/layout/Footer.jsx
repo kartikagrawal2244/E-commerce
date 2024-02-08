@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IoMdHeartEmpty } from 'react-icons/io';
 
 function Footer() {
+
+    const newdate = new Date().getFullYear();
+     
     return (
         <>
             <div className='bg-[#f4edf278]'>
@@ -10,7 +12,7 @@ function Footer() {
                     <div className="grid md:grid-cols-3 lg:flex flex-wrap lg:justify-between lg:items-center place-items-start">
                         <div className="mb-4 lg:mb-0">
                             <Link to="/" className="-m-1.5 p-1.5">
-                                <img className="h-8 w-auto" src="/assets/images/logo.png.webp" alt="" />
+                                <img className="h-7 w-auto" src="/assets/logo.png" alt="" />
                             </Link>
                         </div>
 
@@ -59,12 +61,10 @@ function Footer() {
                 </div >
 
                 <div className="bg-[#F4EDF2] py-6">
-                    <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 lg:place-items-end place-items-center">
-                        <div className="mb-4 lg:mb-0 text-center">
+                    <div className="mx-auto max-w-6xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 lg:place-items-stretch place-items-center">
+                        <div className="mb-4 lg:mb-0">
                             <p className="text-[#795376] text-base font-normal">
-                                Copyright © 2023 All rights reserved | This template is made with{' '}
-                                <IoMdHeartEmpty fontSize={25} className="inline" /> by{' '}
-                                <span className="text-[#4B3049]">Colorlib</span>{' '}
+                                {`Copyright © ${newdate} All rights reserved`}
                             </p>
                         </div>
 

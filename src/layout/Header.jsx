@@ -33,13 +33,13 @@ export default function Header() {
     const { isLoggedIn, name , handlelogout } = useAuth();
 
     return (
-        <header className="bg-white sticky z-10 top-0">
+        <header className="bg-white sticky z-10 top-0 shadow">
 
             <nav className="mx-auto flex max-w-6xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1 lg:order-none order-2">
                     <Link to="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
-                        <img className="h-8 w-auto" src="/assets/images/logo.png.webp" alt="" />
+                        <img className="h-7 w-auto" src="/assets/logo.png" alt="" />
                     </Link>
                 </div>
 
