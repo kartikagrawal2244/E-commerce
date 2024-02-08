@@ -104,40 +104,6 @@ export default function Header() {
                         </Transition>
                     </Popover>
 
-                    {/* <Popover className="relative">
-                        <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                            Blog
-                            <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                        </Popover.Button>
-
-                        <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-200"
-                            enterFrom="opacity-0 translate-y-1"
-                            enterTo="opacity-100 translate-y-0"
-                            leave="transition ease-in duration-150"
-                            leaveFrom="opacity-100 translate-y-0"
-                            leaveTo="opacity-0 translate-y-1"
-                        >
-                            <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 min-w-44 overflow-hidden rounded-3xl bg-[#B08EAD] shadow-lg ring-1 ring-gray-900/5">
-                                <div className="p-4">
-                                    {blog.map((item) => (
-                                        <div
-                                            key={item.name}
-                                            className="group flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6"
-                                        >
-                                            <div className="flex-auto">
-                                                <Link to={item.to} className="block font-semibold text-white">
-                                                    {item.name}
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </Popover.Panel>
-                        </Transition>
-                    </Popover> */}
-
                     <Link to="/contact" className="text-sm font-semibold leading-6 text-gray-900">
                         Contact
                     </Link>
@@ -198,7 +164,7 @@ export default function Header() {
 
                         <Link to="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
-                            <img className="h-8 w-auto" src="/assets/images/logo.png.webp" alt="" />
+                            <img className="h-8 w-auto" src="/assets/logo.png" alt="" />
                         </Link>
 
                         <button
