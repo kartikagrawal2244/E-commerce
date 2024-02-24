@@ -10,13 +10,24 @@ function ProductDetail() {
     const { id } = useParams();
     const { product } = useProduct();
     const [currentProduct, setCurrentProduct] = useState([]);
-    const [digit, setDigit] = useState(1);
+    // const [digit, setDigit] = useState(1);
     const { addtocart } = useCart();
+
+    const digit = 1;
 
 
     useEffect(() => {
-        const selectedProduct = product.find(item => item.id === parseInt(id));
-        setCurrentProduct(selectedProduct);
+
+        const savedProduct = JSON.parse(localStorage.getItem('currentProduct'))
+        console.log(savedProduct);
+
+        if (savedProduct && savedProduct.id === parseInt(id)) {
+            setCurrentProduct(savedProduct);
+        } else {
+            const selectedProduct = product.find(item => item.id === parseInt(id));
+            setCurrentProduct(selectedProduct);
+            localStorage.setItem('currentProduct', JSON.stringify(selectedProduct))
+        }
     }, [id, product]);
 
     return (
@@ -64,26 +75,14 @@ function ProductDetail() {
                 <p className='text-[#707070] text-base font-normal leading-loose mb-10'>{currentProduct.description}</p>
 
                 <div className='flex justify-center mb-16 items-center'>
-                    <h4 className='text-[#795376] text-base font-normal me-6'>Quantity</h4>
+                    <h4 className='text-[#795376] text-base font-normal me-3'>Quantity</h4>
 
-                    <div className='flex' >
-                        <button
-                            type='button'
-                            className='py-3 px-5 border border-[#B08EAD] text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]'
-                            onClick={() => digit > 1 && setDigit(digit - 1)}
-                        >
-                            -
-                        </button>
+                    <input type="text" className='w-10 bg-[#795376] text-center focus:outline-none text-white' readOnly value={digit} />
 
-                        <input type="text" className='w-10 bg-[#795376] text-center focus:outline-none text-white' readOnly value={digit} />
-
-                        <button type='button' className='py-3 px-5 border border-[#B08EAD] text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]' onClick={() => setDigit(digit + 1)} >+</button>
-                    </div>
-
-                    <p className='text-[#795376] text-base font-normal ms-6'> &#36;{currentProduct.price}</p>
+                    <p className='text-[#795376] text-base font-normal ms-3'> &#36;{currentProduct.price}</p>
                 </div>
 
-                <Link to="/shoppingcart" onClick={() => addtocart(currentProduct , digit)} className='py-4 px-12 hover:bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] hover:text-white text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]'>add to cart</Link>
+                <Link to="/shoppingcart" onClick={() => addtocart(currentProduct, digit)} className='py-4 px-12 hover:bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] hover:text-white text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]'>add to cart</Link>
             </div >
 
             <div className='bg-[#4B3049] text-center py-[200px]'>

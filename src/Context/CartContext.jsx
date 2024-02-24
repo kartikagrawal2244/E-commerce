@@ -17,15 +17,16 @@ export const CartProvider = ({ children }) => {
     const initialvalue = {
         cart: getData(),
         totalquantity: "",
-        totalamount: "",
+        totalamount: "",    
         subtotal: "",
         shipping: 500
     }
 
     const [state, dispatch] = useReducer(Reducer, initialvalue);
 
-    const addtocart = (currentProduct, digit) => {
-        dispatch({ type: 'ADD-TO-CART', payload: { currentProduct, digit } })
+    const addtocart = (currentProduct, digit, item) => {
+        localStorage.removeItem('currentProduct')
+        dispatch({ type:'ADD-TO-CART', payload:{ currentProduct, digit, item} })
     }
 
     const cleardata = () => {

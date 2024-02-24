@@ -8,11 +8,15 @@ import Subscribe from '../comman/Subscribe';
 import Filter from '../component/Filter';
 import HeroSection from '../comman/HeroSection';
 import { useProduct } from '../Context';
+import { useCart } from '../Context/CartContext';
 
 function Productlist() {
-    let { allproduct , filterproducts } = useFilter();
+    let { allproduct, filterproducts } = useFilter();
     let { isloading } = useProduct();
     const product = filterproducts.length > 0 ? filterproducts : allproduct;
+    const { addtocart } = useCart();
+
+    const digit = 1;
 
     return (
         <>
@@ -67,7 +71,7 @@ function Productlist() {
                                                     {item.title}
                                                 </Link>
 
-                                                <div className='flex justify-between'>
+                                                <div className='flex justify-between mb-7'>
                                                     <p className='text-xl font-medium text-[#795376] capitalize'> &#36; {item.price}</p>
 
                                                     <Rating
@@ -75,6 +79,8 @@ function Productlist() {
                                                         Count={item.rating.count}
                                                     />
                                                 </div>
+
+                                                <Link to="/shoppingcart" onClick={() => addtocart(item, digit)} className='py-2 px-4 hover:bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] hover:text-white text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]'>add to cart</Link>
                                             </div>
                                         ))
                                     }

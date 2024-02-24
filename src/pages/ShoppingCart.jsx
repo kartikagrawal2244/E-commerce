@@ -86,8 +86,8 @@ function ShoppingCart() {
                                             </div>
                                         </TableCell>
 
-                                        <TableCell onClick={() => handledelete(item.id)}>
-                                            <p className='text-[#2a2a2a] text-sm font-bold cursor-pointer'>Delete</p>
+                                        <TableCell>
+                                            <p className='text-[#2a2a2a] text-sm font-bold cursor-pointer' onClick={() => handledelete(item.id)}>Delete</p>
                                         </TableCell>
 
                                         <TableCell>
