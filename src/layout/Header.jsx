@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 
 import {
@@ -9,18 +9,13 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { FaCartShopping } from "react-icons/fa6";
 import { FiLogIn } from "react-icons/fi";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../Context/CartContext';
 import { useAuth } from '../Context/AuthContext';
 
 const pages = [
     { name: 'Shopping Cart', to: '/shoppingcart' },
     { name: 'Confirmation', to: '/confirmation' },
-]
-
-const blog = [
-    { name: 'Blog', to: '/blog' },
-    { name: 'Single Blog', to: '/singleblog' },
 ]
 
 function classNames(...classes) {
@@ -31,10 +26,15 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const { totalquantity } = useCart();
     const { isLoggedIn, name , handlelogout } = useAuth();
+    const location = useLocation();
+
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
 
     return (
         <header className="bg-white sticky z-10 top-0 shadow">
-
             <nav className="mx-auto flex max-w-6xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1 lg:order-none order-2">
                     <Link to="/" className="-m-1.5 p-1.5">
