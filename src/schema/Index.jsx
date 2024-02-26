@@ -8,7 +8,7 @@ export const loginvalidation = () => {
             .min(3, 'Password is too short - should be 8 chars minimum.')
         // .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, 'Password must be eight characters including one uppercase letter, one special character and alphanumeric characters.')
         ,
-        check: yup.boolean().oneOf([true], 'You must agree to the terms and conditions')
+        // check: yup.boolean().oneOf([true], 'You must agree to the terms and conditions')
     })
 }
 
