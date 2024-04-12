@@ -70,7 +70,7 @@ function ShoppingCart() {
 
                                         <TableCell>
                                             <p className='text-[#2a2a2a] text-sm font-bold text-center'>
-                                                &#36;{item.price}
+                                            &#8377;{item.price}
                                             </p>
                                         </TableCell>
 
@@ -91,7 +91,7 @@ function ShoppingCart() {
                                         </TableCell>
 
                                         <TableCell>
-                                            <p className='text-[#2a2a2a] text-sm font-bold'>&#36;{(item.price * item.digit).toFixed(2)}</p>
+                                            <p className='text-[#2a2a2a] text-sm font-bold'>&#8377; {(item.price * item.digit).toFixed(2)}</p>
                                         </TableCell>
                                     </TableRow>
                                 ))}
@@ -117,7 +117,7 @@ function ShoppingCart() {
 
                     <div className='flex justify-end py-[60px] border-[#dddddd] border-b'>
                         <p className='text-sm text-[#2a2a2a] font-bold me-40'>Subtotal</p>
-                        <p className='text-sm text-[#2a2a2a] font-bold'>&#36;{totalamount}</p>
+                        <p className='text-sm text-[#2a2a2a] font-bold'>&#8377; {totalamount}</p>
                     </div>
 
                     <div className='py-[60px] md:text-end text-center'>

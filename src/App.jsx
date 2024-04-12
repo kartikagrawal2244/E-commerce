@@ -15,6 +15,7 @@ import SignUp from './auth/SignUp';
 import Confirmation from './pages/Confirmation';
 import Blog from './pages/Blog';
 import SingleBlog from './pages/SingleBlog';
+import Error from './pages/Error';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path='/confirmation' element={<Confirmation />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/singleblog' element={<SingleBlog />} />
+        <Route path='*' element={<Error />} />
       </Routes>
       <Footer />
     </>

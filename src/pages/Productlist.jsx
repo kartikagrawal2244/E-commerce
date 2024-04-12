@@ -72,7 +72,7 @@ function Productlist() {
                                                 </Link>
 
                                                 <div className='flex justify-between mb-7'>
-                                                    <p className='text-xl font-medium text-[#795376] capitalize'> &#36; {item.price}</p>
+                                                    <p className='text-xl font-medium text-[#795376] capitalize'> &#8377; {item.price}</p>
 
                                                     <Rating
                                                         Rate={item.rating.rate}

@@ -262,7 +262,7 @@ function ProductCheckout() {
                                     </div>
 
                                     <div>
-                                        <p className='text-sm text-[#795376]'>${item.price * item.digit}</p>
+                                        <p className='text-sm text-[#795376]'>&#8377; {item.price * item.digit}</p>
                                     </div>
                                 </div>
                             )
@@ -271,21 +271,21 @@ function ProductCheckout() {
 
                         <div className='flex justify-between py-4 border-[#dddddd] border-b'>
                             <p className='text-sm text-[#2a2a2a] font-bold me-40'>Subtotal</p>
-                            <p className='text-sm text-[#2a2a2a] font-bold'>&#36;&nbsp;{totalamount}
+                            <p className='text-sm text-[#2a2a2a] font-bold'>&#8377;&nbsp;{totalamount}
                             </p>
                         </div>
 
                         <div className='flex justify-between py-4 border-[#dddddd] border-b'>
                             <p className='text-sm text-[#2a2a2a] font-bold me-40'>Shipping</p>
 
-                            <p className='text-sm text-[#2a2a2a] font-bold'>&#36;&nbsp;{shipping}
+                            <p className='text-sm text-[#2a2a2a] font-bold'>&#8377;&nbsp;{shipping}
                             </p>
                         </div>
 
                         <div className='flex justify-between py-4 border-[#dddddd] border-b'>
                             <p className='text-sm text-[#2a2a2a] font-bold me-40'>Total</p>
 
-                            <p className='text-sm text-[#2a2a2a] font-bold'>&#36;&nbsp;{totalamount + shipping}
+                            <p className='text-sm text-[#2a2a2a] font-bold'>&#8377;&nbsp;{totalamount + shipping}
                             </p>
                         </div>
 

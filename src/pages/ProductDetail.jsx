@@ -79,7 +79,7 @@ function ProductDetail() {
 
                     <input type="text" className='w-10 bg-[#795376] text-center focus:outline-none text-white' readOnly value={digit} />
 
-                    <p className='text-[#795376] text-base font-normal ms-3'> &#36;{currentProduct.price}</p>
+                    <p className='text-[#795376] text-base font-normal ms-3'> &#8377;{currentProduct.price}</p>
                 </div>
 
                 <Link to="/shoppingcart" onClick={() => addtocart(currentProduct, digit)} className='py-4 px-12 hover:bg-[#B08EAD] border-[2px] border-[#B08EAD] rounded-[5px] hover:text-white text-base font-medium uppercase transition-all bg-transparent text-[#B08EAD] ease-in-out duration-[0.5s]'>add to cart</Link>
